@@ -405,10 +405,10 @@ function getsMapsSearch(search) {
     }
     const $map_div = $("<div>", {id: mapArrayByID[i][1], "class": "maps_page_list"});
     if(/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ) {
-      $map_div.append("<img onerror=" + "this.src='https://d2u7y93d5eagqt.cloudfront.net/mapImages/thumbs/tn_noimage.jpg'" + " style='width: 120px; height: 68px;' src=" + imageBaseURL + mapArrayByID[i][1] + ".jpg>" + "<span style='color:" + secondary_text_color + "; padding-left: 15px;'>" + mapArrayByID[i][1] + "<br>" + "<div>" + getDifficulty(mapArrayByID[i][2]) + "</div>" + "</span>");
+      $map_div.append("<img " + imageBaseURL + mapArrayByID[i][1] + ".jpg>" + "<span style='color:" + secondary_text_color + "; padding-left: 15px;'>" + mapArrayByID[i][1] + "<br>" + "<div>" + getDifficulty(mapArrayByID[i][2]) + "</div>" + "</span>");
     }
     else {
-      $map_div.append("<img onerror=" + "this.src='https://d2u7y93d5eagqt.cloudfront.net/mapImages/thumbs/tn_noimage.jpg'" + " style='width: 150px; height: 84px;' src=" + imageBaseURL + mapArrayByID[i][1] + ".jpg>" + "<span style='color:" + secondary_text_color + "; padding-left: 15px;'>" + mapArrayByID[i][1] + "<br>" + "<div>" + getDifficulty(mapArrayByID[i][2]) + "</div>" + "</span>");
+      $map_div.append("<img " + " style='width: 150px; height: 84px;' src=" + imageBaseURL + mapArrayByID[i][1] + ".jpg>" + "<span style='color:" + secondary_text_color + "; padding-left: 15px;'>" + mapArrayByID[i][1] + "<br>" + "<div>" + getDifficulty(mapArrayByID[i][2]) + "</div>" + "</span>");
     }
     $("#list_of_maps").append($map_div);
     $map_div.click(function(event){
@@ -454,10 +454,10 @@ function getMaps(offset) {
     }
     const $map_div = $("<div>", {id: maplist[i].name, "class": "maps_page_list"});
     if(/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ) {
-      $map_div.append("<img onerror=" + "this.src='https://d2u7y93d5eagqt.cloudfront.net/mapImages/thumbs/tn_noimage.jpg'" + " style='width: 120px; height: 68px;' src=" + imageBaseURL + maplist[i].name + ".jpg>" + "<span style='color:" + secondary_text_color + "; padding-left: 15px;'>" + maplist[i].name + "<br>" + "<div>" + getDifficulty(maplist[i].difficulty) + "</div>" + "</span>");
+      $map_div.append("<img " + " style='width: 120px; height: 68px;' src=" + imageBaseURL + maplist[i].name + ".jpg>" + "<span style='color:" + secondary_text_color + "; padding-left: 15px;'>" + maplist[i].name + "<br>" + "<div>" + getDifficulty(maplist[i].difficulty) + "</div>" + "</span>");
     }
     else {
-      $map_div.append("<img onerror=" + "this.src='https://d2u7y93d5eagqt.cloudfront.net/mapImages/thumbs/tn_noimage.jpg'" + " style='width: 150px; height: 84px;' src=" + imageBaseURL + maplist[i].name + ".jpg>" + "<span style='color:" + secondary_text_color + "; padding-left: 15px;'>" + maplist[i].name + "<br>" + "<div>" + getDifficulty(maplist[i].difficulty) + "</div>" + "</span>");
+      $map_div.append("<img " + " style='width: 150px; height: 84px;' src=" + imageBaseURL + maplist[i].name + ".jpg>" + "<span style='color:" + secondary_text_color + "; padding-left: 15px;'>" + maplist[i].name + "<br>" + "<div>" + getDifficulty(maplist[i].difficulty) + "</div>" + "</span>");
     }
     $("#list_of_maps").append($map_div);
     $map_div.click(function(event){
@@ -1745,7 +1745,7 @@ function getRecent() {
         const ReadableTime = (mostRecentTimes[i].updated_on).split("T");
         const $map_div = $("<div>", {id: mostRecentTimes[i].map_name, "class": "map_div recent_runs"});
 
-        $map_div.append("<img onerror=" + "this.src='https://d2u7y93d5eagqt.cloudfront.net/mapImages/thumbs/tn_noimage.jpg'" + " src=" + imageBaseURL + mostRecentTimes[i].map_name + ".jpg>" + "<span style='color:" + secondary_text_color + ";'>" + mostRecentTimes[i].map_name + " <br>" + playerName + "<br>" + "<div>" + (mostRecentTimes[i].top_100 === 0 ? "NA" : '#' + mostRecentTimes[i].top_100) + "</div>" + " | " + "<div>" + timeConvert(mostRecentTimes[i].time) + "</div><br>" + mostRecentTimes[i].teleports + " TPs" + "</span>");
+        $map_div.append("<img " + " src=" + imageBaseURL + mostRecentTimes[i].map_name + ".jpg>" + "<span style='color:" + secondary_text_color + ";'>" + mostRecentTimes[i].map_name + " <br>" + playerName + "<br>" + "<div>" + (mostRecentTimes[i].top_100 === 0 ? "NA" : '#' + mostRecentTimes[i].top_100) + "</div>" + " | " + "<div>" + timeConvert(mostRecentTimes[i].time) + "</div><br>" + mostRecentTimes[i].teleports + " TPs" + "</span>");
         // This was created by Chuckles to help with selecting maps for users. Extremely useful as most users tend to not use their keyboard in 2018.
         $map_div.click(function(event){
           if (event.target.parentNode.id.includes("_")) {
@@ -1827,7 +1827,7 @@ function getLatest() {
         const ReadableTime = (mostRecentTopTimesFiltered[m].updated_on).split("T");
         const $map_div = $("<div>", {id: mostRecentTopTimesFiltered[m].map_name, "class": "map_div pro_runs"});
 
-        $map_div.append("<img onerror=" + "this.src='https://d2u7y93d5eagqt.cloudfront.net/mapImages/thumbs/tn_noimage.jpg'" + " src=" + imageBaseURL + mostRecentTopTimesFiltered[m].map_name + ".jpg>" + "<span style='color:" + secondary_text_color + ";'>" + mostRecentTopTimesFiltered[m].map_name + "<br>" + playerName + "<br>" + "<div>" + timeConvert(mostRecentTopTimesFiltered[m].time) + "</div>" + "<br>" + "<div style='color:" + secondary_text_color + "; font-size: 90%; font-style: italic'>" + getTimeDifference(mostRecentTopTimesFiltered[m].created_on) + "</div>" + "</span>");
+        $map_div.append("<img " + " src=" + imageBaseURL + mostRecentTopTimesFiltered[m].map_name + ".jpg>" + "<span style='color:" + secondary_text_color + ";'>" + mostRecentTopTimesFiltered[m].map_name + "<br>" + playerName + "<br>" + "<div>" + timeConvert(mostRecentTopTimesFiltered[m].time) + "</div>" + "<br>" + "<div style='color:" + secondary_text_color + "; font-size: 90%; font-style: italic'>" + getTimeDifference(mostRecentTopTimesFiltered[m].created_on) + "</div>" + "</span>");
         $map_div.click(function(event){
           if (event.target.parentNode.id.includes("_")) {
             document.getElementById("searchMap").value = event.target.parentNode.id;
